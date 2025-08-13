@@ -78,7 +78,34 @@ En FEP Academia creemos en el poder de la educación como motor de cambio. Nuest
 
 <footer>
     <p>© 2025 Academia FEP. Todos los derechos reservados.</p>
+    <p>Visitas hoy: <span id="daily-count">0</span> | Visitas totales: <span id="total-count">0</span></p>
 </footer>
+
+<script>
+    const today = new Date().toDateString();
+
+    // Cargar contador total
+    let totalVisits = localStorage.getItem("totalVisits") || 0;
+    totalVisits++;
+    localStorage.setItem("totalVisits", totalVisits);
+
+    // Cargar contador diario
+    let lastVisitDate = localStorage.getItem("lastVisitDate");
+    let dailyVisits = localStorage.getItem("dailyVisits") || 0;
+
+    if (lastVisitDate !== today) {
+        dailyVisits = 1;
+    } else {
+        dailyVisits++;
+    }
+
+    localStorage.setItem("dailyVisits", dailyVisits);
+    localStorage.setItem("lastVisitDate", today);
+
+    // Mostrar en el HTML
+    document.getElementById("daily-count").textContent = dailyVisits;
+    document.getElementById("total-count").textContent = totalVisits;
+</script>
 
 
 </body>
