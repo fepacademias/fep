@@ -71,19 +71,29 @@
         color: var(--color-blackfriday-texto);
         text-align: center;
         padding: 15px;
-        display: flex;
+        display: flex; 
+        flex-direction: column; 
         align-items: center;
-        justify-content: center; /* Centra el único elemento restante */
+        justify-content: center;
         border-bottom: 5px solid var(--color-principal); 
     }
 
     .black-friday-promo .blinking-text {
-        font-size: 3em; /* Aumentado para mayor prominencia */
+        font-size: 3em; 
         font-weight: bold;
         color: var(--color-blackfriday-acento);
         animation: blinker 1s linear infinite; 
-        text-shadow: 0 0 10px var(--color-blackfriday-acento); /* Sombra intensa de brillo */
+        text-shadow: 0 0 10px var(--color-blackfriday-acento);
         white-space: nowrap; 
+        margin-bottom: 5px; 
+        line-height: 1; 
+    }
+    
+    .black-friday-promo .sub-text {
+        font-size: 1.2em;
+        font-weight: 500;
+        color: #fff; 
+        margin: 0;
     }
 
     /* Definición de la animación de parpadeo */
@@ -114,6 +124,7 @@
     
     <div class="black-friday-promo">
         <span class="blinking-text">¡BLACK FRIDAY!</span>
+        <p class="sub-text">¡Hasta un -80% en matrícula!</p>
     </div>
 
     <section id="inicio">
