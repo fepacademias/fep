@@ -8,10 +8,10 @@
     :root {
         --color-principal: #c40000;
         --color-principal-oscuro: #900000;
-        /* Colores para la promoción de Black Friday */
-        --color-blackfriday-fondo: #000;
-        --color-blackfriday-texto: #fff;
-        --color-blackfriday-acento: #ffdd00; /* Un amarillo/dorado para el acento */
+        /* Colores para la promoción de Navidad */
+        --color-navidad-fondo: #8b0000; /* Un rojo oscuro festivo */
+        --color-navidad-texto: #fff;
+        --color-navidad-acento: #ffdf00; /* Dorado brillante */
     }
     body {
         font-family: Arial, sans-serif;
@@ -65,44 +65,59 @@
         margin-top: auto;
     }
 
-    /* --- ESTILOS BLACK FRIDAY --- */
-    .black-friday-promo {
-        background-color: var(--color-blackfriday-fondo);
-        color: var(--color-blackfriday-texto);
+    /* --- ESTILOS NAVIDAD --- */
+    .navidad-promo {
+        background-color: var(--color-navidad-fondo);
+        color: var(--color-navidad-texto);
         text-align: center;
-        padding: 15px;
+        padding: 20px;
         display: flex; 
         flex-direction: column; 
         align-items: center;
         justify-content: center;
-        border-bottom: 5px solid var(--color-principal); 
+        border-bottom: 5px solid var(--color-navidad-acento); 
+        /* Adorno: Patrón festivo sutil o sombra */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05) 5px, transparent 5px, transparent 10px);
     }
 
-    .black-friday-promo .blinking-text {
-        font-size: 3em; 
-        font-weight: bold;
-        color: var(--color-blackfriday-acento);
-        animation: blinker 1s linear infinite; 
-        text-shadow: 0 0 10px var(--color-blackfriday-acento);
+    .navidad-promo .titulo-navidad {
+        font-size: 2.5em; /* Ligeramente más pequeño que el Black Friday */
+        font-weight: 900; /* Muy negrita */
+        color: var(--color-navidad-acento);
+        text-shadow: 0 0 10px rgba(255, 223, 0, 0.8), 0 0 20px rgba(255, 223, 0, 0.5); /* Efecto de brillo */
         white-space: nowrap; 
         margin-bottom: 5px; 
-        line-height: 1; 
+        line-height: 1.2; 
+        padding: 5px 15px;
+        border: 3px solid var(--color-navidad-acento);
+        border-radius: 5px;
+        animation: pulso-navidad 2s infinite ease-in-out;
     }
     
-    .black-friday-promo .sub-text {
-        font-size: 1.2em;
-        font-weight: 500;
+    .navidad-promo .sub-text {
+        font-size: 1.4em;
+        font-weight: 600;
         color: #fff; 
-        margin: 0;
+        margin: 10px 0 0 0;
     }
 
-    /* Definición de la animación de parpadeo */
-    @keyframes blinker {
+    /* Definición de la animación de pulso */
+    @keyframes pulso-navidad {
+        0% {
+            transform: scale(1);
+            box-shadow: 0 0 5px var(--color-navidad-acento);
+        }
         50% {
-            opacity: 0.1;
+            transform: scale(1.02);
+            box-shadow: 0 0 20px var(--color-navidad-acento);
+        }
+        100% {
+            transform: scale(1);
+            box-shadow: 0 0 5px var(--color-navidad-acento);
         }
     }
-    /* --- FIN ESTILOS BLACK FRIDAY --- */
+    /* --- FIN ESTILOS NAVIDAD --- */
 </style>
 </head>
 <body>
@@ -122,9 +137,9 @@
         <a href="contacto.html">Contacto</a>
     </nav>
     
-    <div class="black-friday-promo">
-        <span class="blinking-text">¡BLACK FRIDAY!</span>
-        <p class="sub-text">¡Hasta un 80% de descuento en tu matrícula!</p>
+    <div class="navidad-promo">
+        <span class="titulo-navidad">POR ESTAS NAVIDADES REGALA FUTURO</span>
+        <p class="sub-text">¡Invierte en tu formación o la de tus seres queridos!</p>
     </div>
 
     <section id="inicio">
