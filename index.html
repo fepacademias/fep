@@ -8,10 +8,6 @@
     :root {
         --color-principal: #c40000;
         --color-principal-oscuro: #900000;
-        /* Colores para la promoción de Navidad */
-        --color-navidad-fondo: #8b0000; /* Un rojo oscuro festivo */
-        --color-navidad-texto: #fff;
-        --color-navidad-acento: #ffdf00; /* Dorado brillante */
     }
     body {
         font-family: Arial, sans-serif;
@@ -64,60 +60,6 @@
         padding: 1px 0;
         margin-top: auto;
     }
-
-    /* --- ESTILOS NAVIDAD MODIFICADOS PARA RESPONSIVE --- */
-    .navidad-promo {
-        background-color: var(--color-navidad-fondo);
-        color: var(--color-navidad-texto);
-        text-align: center;
-        padding: 20px 10px; /* Ajuste para que haya más espacio en los bordes de móviles */
-        display: flex; 
-        flex-direction: column; 
-        align-items: center;
-        justify-content: center;
-        border-bottom: 5px solid var(--color-navidad-acento); 
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05) 5px, transparent 5px, transparent 10px);
-    }
-
-    .navidad-promo .titulo-navidad {
-        /* Usamos min(8vw, 2.5em) para que el tamaño de fuente se reduzca en móviles (8vw) pero no exceda 2.5em en escritorio. */
-        font-size: min(8vw, 2.5em); 
-        font-weight: 900; 
-        color: var(--color-navidad-acento);
-        text-shadow: 0 0 10px rgba(255, 223, 0, 0.8), 0 0 20px rgba(255, 223, 0, 0.5); 
-        /* Se eliminó white-space: nowrap; para permitir que el texto se cuadre y salte de línea */
-        margin-bottom: 5px; 
-        line-height: 1.1; /* Ajustar line-height para líneas múltiples */
-        padding: 5px 10px; /* Ajustar padding horizontal */
-        border: 3px solid var(--color-navidad-acento);
-        border-radius: 5px;
-        animation: pulso-navidad 2s infinite ease-in-out;
-    }
-    
-    .navidad-promo .sub-text {
-        font-size: min(5vw, 1.4em); /* También hacerlo responsivo */
-        font-weight: 600;
-        color: #fff; 
-        margin: 10px 0 0 0;
-    }
-
-    /* Definición de la animación de pulso */
-    @keyframes pulso-navidad {
-        0% {
-            transform: scale(1);
-            box-shadow: 0 0 5px var(--color-navidad-acento);
-        }
-        50% {
-            transform: scale(1.02);
-            box-shadow: 0 0 20px var(--color-navidad-acento);
-        }
-        100% {
-            transform: scale(1);
-            box-shadow: 0 0 5px var(--color-navidad-acento);
-        }
-    }
-    /* --- FIN ESTILOS NAVIDAD --- */
 </style>
 </head>
 <body>
@@ -136,11 +78,6 @@
         <a href="calendario.html">Calendario</a>
         <a href="contacto.html">Contacto</a>
     </nav>
-    
-    <div class="navidad-promo">
-        <span class="titulo-navidad">EN ESTAS NAVIDADES REGALA FUTURO</span>
-        <p class="sub-text">¡Invierte en tu formación o la de tus seres queridos!</p>
-    </div>
 
     <section id="inicio">
         <h2>Bienvenidos a FEP Academia</h2>
